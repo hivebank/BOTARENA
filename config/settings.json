@@ -1,0 +1,103 @@
+{
+  "app": {
+    "name": "Hyperliquid Trading SaaS",
+    "version": "1.0.0",
+    "environment": "development",
+    "maintenance_mode": false
+  },
+  "trading": {
+    "max_leverage": 20,
+    "max_position_size_usd": 100000,
+    "max_daily_loss_percent": 5,
+    "max_open_positions": 5,
+    "allowed_symbols": ["BTC", "ETH", "SOL", "ARB", "OP", "MATIC"],
+    "default_strategy": "ai_optimizer"
+  },
+  "risk": {
+    "global_exposure_limit_usd": 1000000,
+    "max_drawdown_percent": 20,
+    "stop_loss_percent": 2,
+    "take_profit_percent": 5,
+    "trailing_stop_percent": 1.5
+  },
+  "pricing": {
+    "free_tier": {
+      "max_bots": 1,
+      "max_capital_usd": 1000,
+      "features": ["basic_strategies", "backtesting"]
+    },
+    "pro_tier": {
+      "price_month": 49.99,
+      "price_year": 499.99,
+      "max_bots": 5,
+      "max_capital_usd": 50000,
+      "features": ["all_strategies", "ai_optimizer", "backtesting", "paper_trading", "live_trading"]
+    },
+    "enterprise_tier": {
+      "price_month": 199.99,
+      "price_year": 1999.99,
+      "max_bots": 20,
+      "max_capital_usd": 500000,
+      "features": ["all_strategies", "ai_optimizer", "backtesting", "paper_trading", "live_trading", "api_access", "priority_support"]
+    }
+  },
+  "strategies": {
+    "momentum": {
+      "enabled": true,
+      "parameters": {
+        "lookback_period": 14,
+        "threshold": 0.02
+      }
+    },
+    "mean_reversion": {
+      "enabled": true,
+      "parameters": {
+        "lookback_period": 20,
+        "std_dev_threshold": 2
+      }
+    },
+    "grid_trading": {
+      "enabled": true,
+      "parameters": {
+        "grid_levels": 10,
+        "grid_spacing_percent": 0.5
+      }
+    },
+    "ai_optimizer": {
+      "enabled": true,
+      "model": "lstm",
+      "parameters": {
+        "sequence_length": 60,
+        "prediction_horizon": 5,
+        "confidence_threshold": 0.7
+      }
+    },
+    "breakout": {
+      "enabled": true,
+      "parameters": {
+        "lookback_period": 20,
+        "volume_threshold": 1.5
+      }
+    }
+  },
+  "notifications": {
+    "email_enabled": true,
+    "discord_enabled": false,
+    "telegram_enabled": false,
+    "events": ["trade_executed", "stop_loss_hit", "take_profit_hit", "bot_error", "payment_received"]
+  },
+  "features": {
+    "paper_trading": true,
+    "backtesting": true,
+    "live_trading": true,
+    "social_trading": false,
+    "copy_trading": false
+  },
+  "system": {
+    "max_workers": 4,
+    "worker_restart_delay": 5,
+    "health_check_interval": 60,
+    "cleanup_old_logs_days": 30,
+    "backup_interval_hours": 24
+  }
+}
