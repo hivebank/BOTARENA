@@ -52,6 +52,34 @@ A complete, production-ready SaaS platform for automated trading on Hyperliquid 
 
 ## 🚦 Quick Start
 
+### 🚂 Deploy on Railway.com (Recommended)
+
+**One-click deployment to Railway - no server setup needed!**
+
+1. **Click to Deploy**
+   - Push this repo to GitHub
+   - Go to [Railway.app](https://railway.app/new)
+   - Select "Deploy from GitHub repo"
+   - Choose this repository
+   - Railway auto-detects and deploys!
+
+2. **Set Environment Variables**
+   - `MONGO_URI` - MongoDB connection string
+   - `JWT_SECRET` - Generate with: `openssl rand -base64 64`
+   - `SOL_WALLET` - Your Solana wallet address
+   - `ETH_WALLET` - Your Ethereum wallet address
+
+3. **Access Your App**
+   - Railway provides URL: `https://your-app.up.railway.app`
+   - Login: `admin@railway.app` / `admin123`
+   - **⚠️ Change password immediately!**
+
+**📖 Full Railway Guide:** [docs/RAILWAY_DEPLOYMENT.md](docs/RAILWAY_DEPLOYMENT.md)
+
+---
+
+### 🖥️ Local/VPS Installation
+
 ### Prerequisites
 ```bash
 # Ubuntu 22.04 LTS
@@ -98,8 +126,9 @@ Password: admin123
 
 ## 📚 Documentation
 
+- **[Railway Deployment](docs/RAILWAY_DEPLOYMENT.md)** - Deploy to Railway.com (recommended)
 - [Setup Guide](docs/SETUP.md) - Complete installation and configuration
-- [Apache Deployment](docs/DEPLOY_APACHE.md) - Production Apache setup
+- [Apache Deployment](docs/DEPLOY_APACHE.md) - Production Apache/VPS setup
 
 ## 🏛️ Architecture
 
