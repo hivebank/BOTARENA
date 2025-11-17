@@ -54,11 +54,11 @@ RUN ln -s /etc/nginx/sites-available/hyperliquid /etc/nginx/sites-enabled/
 # Copy supervisor config
 COPY railway-supervisor.conf /etc/supervisor/conf.d/hyperliquid.conf
 
-# Create necessary directories
+# Create necessary directories and make scripts executable
 RUN mkdir -p /app/logs /run/php && \
     chmod -R 755 /app && \
     chmod -R 777 /app/logs && \
-    chmod +x /app/railway-start.sh
+    chmod +x /app/start.sh /app/railway-start.sh
 
 # Expose port
 EXPOSE 8080
@@ -68,4 +68,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:8080/health.php || exit 1
 
 # Start command
-CMD ["/app/railway-start.sh"]
+CMD ["/app/start.sh"]
