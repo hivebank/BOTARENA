@@ -23,16 +23,17 @@
 
 ### Step 2: Deploy to Railway
 
-1. **Push to GitHub**
+1. **Push to GitHub** (Already done!)
    ```bash
-   git push origin claude/hyperliquid-trading-saas-01CQTBaEvQw7dFqHbq2ggnL5
+   # Code is at: claude/hyperliquid-trading-saas-01CQTBaEvQw7dFqHbq2ggnL5
    ```
 
 2. **Create Railway Project**
    - Go to https://railway.app/new
    - Click "Deploy from GitHub repo"
-   - Select your repository
-   - Select branch
+   - Select repository: **hivebank/BOTARENA**
+   - Select branch: **claude/hyperliquid-trading-saas-01CQTBaEvQw7dFqHbq2ggnL5**
+   - Railway will **auto-detect Dockerfile** and build
 
 3. **Set Environment Variables**
    ```
